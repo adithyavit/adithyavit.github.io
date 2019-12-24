@@ -1,0 +1,26 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+# Setup
+title:               Adithya
+tagline:             'Data Science and ML Projects'
+description:         '<a href= target="_blank">Adithya</a> Master`s in computer science with Big Data Specialization at Arizona State University. Actively looking for summer internships'
+url:                 ''
+baseurl:             ''
+paginate:            5
+paginate_path: "page:num"
+gems: [jekyll-paginate]
+
+
+
+
+# About/contact
+author:
+  name:              Sai Adithya Reddy Chinthalapani
+  url:               https://www.linkedin.com/in/adithya-reddy-ch/
+  email:             chreddy97@gmail.com
+
+# Custom vars
+version:             1.0.0

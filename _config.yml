@@ -13,8 +13,7 @@ paginate:            5
 paginate_path: "page:num"
 gems: [jekyll-paginate]
 
-
-
+future: true
 
 # About/contact
 author:

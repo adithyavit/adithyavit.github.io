@@ -37,7 +37,7 @@ I used jekyll and github to write and publish this blog.
 ## Why i choose jekyll
 My target was to create a portfolio website, since I have been learning about webdevelopment for a while, I looked at the available options.
 1.django (I created a web app in djnago and am good at python)
-2. mean/mern stack (this was trending stack and I took a course on udemy from colt steel from which I learnt a lot from)
+2. mean/mern stack (this was trending stack and I worked a bit on node)
 3. ruby on rails (heard this was easy to learn and had only one was to do things unlike node)
 4. dot net (widely used in industry, so I can have an easier time finding a job, if I have this on my resume)
 

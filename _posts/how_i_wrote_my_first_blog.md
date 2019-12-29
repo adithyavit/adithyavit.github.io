@@ -1,4 +1,9 @@
-# How I wrote my first blog
+---
+layout: post
+title: How I wrote my first blog!
+---
+
+# How I wrote my first blog!
 
 ## This is not my first blog
 To be frank this is not my first blog, when I was young, I tried to write blogs using google blogger, wix, wordpress etc.

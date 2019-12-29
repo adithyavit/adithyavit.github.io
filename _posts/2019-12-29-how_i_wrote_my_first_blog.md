@@ -86,8 +86,7 @@ It was inconvinient in both ways,
 1. I had to update yml file after each blog
 2. The top nav-bar would be filled after a few pages.
 
-So, I started looking for themes with sidebar. After a few hours of trying different themes. I stumbled upon this theme **Lanyon
-** which is based on poole.
+So, I started looking for themes with sidebar. After a few hours of trying different themes. I stumbled upon this theme **Lanyon** which is based on poole.
 
 ## steps to use Lanyon
 1. clone the lanyon theme

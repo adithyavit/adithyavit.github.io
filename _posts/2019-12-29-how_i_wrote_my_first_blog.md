@@ -110,5 +110,5 @@ I tried using it, but as it uses some deprecated tools, I encountered some issue
 So, I would suggest using lanyon and avoid hyde.
 
 ### two important issues to fix before publishing a blog post
-https://stackoverflow.com/questions/30625044/jekyll-post-not-generated
-https://github.com/poole/lanyon/issues/108
+* https://stackoverflow.com/questions/30625044/jekyll-post-not-generated
+* https://github.com/poole/lanyon/issues/108

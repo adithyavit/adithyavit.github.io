@@ -108,3 +108,7 @@ title: About
 There is one more theme based on poole called hyde. This is similar to lanyon, but has a fixed sidebar as opposed to sliding sidebar on lanyon.
 I tried using it, but as it uses some deprecated tools, I encountered some issues while trying to serve it. Even after fixing those things, the rendering was improper.
 So, I would suggest using lanyon and avoid hyde.
+
+### two important issues to fix before publishing a blog post
+https://stackoverflow.com/questions/30625044/jekyll-post-not-generated
+https://github.com/poole/lanyon/issues/108

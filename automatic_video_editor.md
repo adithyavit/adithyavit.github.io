@@ -15,32 +15,35 @@ The initial version of the script I wrote using ffmpeg took over 15 minutes for 
 ```video_information=$(ffmpeg -i "$NAME" -ss 0 -t 15 -filter_complex "select='gt(scene,0.3)',metadata=print:file=-"  -vsync vfr slidesnap%03d.png 2>&1 2>/dev/null)```
 ### c.	The output from above ffmpeg code is stored into video_information variable which will be useful to cut the video. 
 ## Step 2: Use the scene change text file and parse the timestamp.
-###a.	Some videos only had title, so I took the first timestamp where the scene change was detected.
-### b.	Some videos had both montage and title. Here I took the second time from the scene change list.
+	Some videos only had title, so I took the first timestamp where the scene change was detected.
+	Some videos had both montage and title. Here I took the second time from the scene change list.
 ## Step 3: Now we will remove the frames till the timestamp that we extracted above and add the montage video to it.[1]
-1.	We can remove the first few frames in two ways input seeking and output seeking.
-2.	To use input seeking we place the -ss parameter before -i parameter in our script and incase of output seeking we use -ss parameter after the – parameter
+	We can remove the first few frames in two ways input seeking and output seeking.
+	To use input seeking we place the -ss parameter before -i parameter in our script and incase of output seeking we use -ss parameter after the – parameter
 ``` Input seeking: ffmpeg -ss 00:23:00 -i Mononoke.Hime.mkv -frames:v 1 out1.jpg
-Output seeking: ffmpeg -i Mononoke.Hime.mkv -ss 00:23:00 -frames:v 1 out2.jpg```
-3.	 The input seeking method works faster by using key frames whereas the output seeking method decodes and discards each frame till reaches the specified time stamp. Previously input seek was not accurate, but since it is accurate now, we use input seeking method.
-4.	We don’t follow this step 3 directly, but we use it in combination with the steps below.
+Output seeking: ffmpeg -i Mononoke.Hime.mkv -ss 00:23:00 -frames:v 1 out2.jpg 
+```
+	 The input seeking method works faster by using key frames whereas the output seeking method decodes and discards each frame till reaches the specified time stamp. Previously input seek was not accurate, but since it is accurate now, we use input seeking method.
+	We don’t follow this step 3 directly, but we use it in combination with the steps below.
 ## Step 4:  Then we concatenate the montage video that we have already cut using a single line ffmpeg command.[2]
-1.	There are three methods to concatenate videos. The first two methods work when the files to be concatenated use the same codec. The third one works even when the codecs are different.
-2.	The concat demuxer and concat protocol methods work when all the files to be concatenated are of same format. The demuxer works at stream level whereas the protocol works on file level.
-3.	The montage video we use here is in the same format as the other videos. Even if it is not in the same format, we can convert it to the same format using ffmpeg.
-4.	In our first attempt, we use the concat protocol and create intermediate files to cut and concatenate the videos.
+	There are three methods to concatenate videos. The first two methods work when the files to be concatenated use the same codec. The third one works even when the codecs are different.
+	The concat demuxer and concat protocol methods work when all the files to be concatenated are of same format. The demuxer works at stream level whereas the protocol works on file level.
+	The montage video we use here is in the same format as the other videos. Even if it is not in the same format, we can convert it to the same format using ffmpeg.
+	In our first attempt, we use the concat protocol and create intermediate files to cut and concatenate the videos.
 ```	ffmpeg -i montage.mp4 -qscale:v 1 intermediate1.mpg 
 	ffmpeg -i "$NAME" -qscale:v 1 intermediate2.mpg 
 	ffmpeg -i concat:"intermediate1.mpg|intermediate2.mpg" -c copy intermediate_all.mpg 
-	ffmpeg -i intermediate_all.mpg -qscale:v 2 output.mp4 ```
-5.	Creating intermediate files is slow and unnecessary, so we now use pipes to avoid intermediate files.
+	ffmpeg -i intermediate_all.mpg -qscale:v 2 output.mp4 	
+```
+	Creating intermediate files is slow and unnecessary, so we now use pipes to avoid intermediate files.
 ```	mkfifo temp1 temp2
 	ffmpeg -y -i Montage3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts temp1 2> /dev/null & \
 	ffmpeg -y -ss "$ts" -i "$NAME" -c copy -bsf:v h264_mp4toannexb -f mpegts temp2 2> /dev/null & \
-	ffmpeg -f mpegts -i "concat:temp1|temp2" -c copy -bsf:a aac_adtstoasc outputs/"$NAME2" ```
-6.	In this method, we use mpegts container format for our intermediate temp files and then finally concatenate the output file back to mp4 container format.
-7.	  While concatenating, instead of concatenating the entire file, we seek to the relevant timestamp and then concatenate, this allows us to avoid an another file for removing the initial frames with text.
-8.	In the above script temp1 2> /dev/null &, we are redirecting the output to null so that we do not clutter/hang the terminal.
+	ffmpeg -f mpegts -i "concat:temp1|temp2" -c copy -bsf:a aac_adtstoasc outputs/"$NAME2" 
+```
+	In this method, we use mpegts container format for our intermediate temp files and then finally concatenate the output file back to mp4 container format.
+	  While concatenating, instead of concatenating the entire file, we seek to the relevant timestamp and then concatenate, this allows us to avoid an another file for removing the initial frames with text.
+	In the above script temp1 2> /dev/null &, we are redirecting the output to null so that we do not clutter/hang the terminal.
 
 ## How scene detect works?[3]
 Ffmpeg uses the Sum of absolute differences method to compare consecutive frames. As we compare only frames till 15 seconds, the amount of time to find the first cut is also reduced. 

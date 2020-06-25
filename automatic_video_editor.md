@@ -93,7 +93,8 @@ ffmpeg -f mpegts -i "concat:temp1|temp2" -c copy -bsf:a aac_adtstoasc outputs/"$
 rm temp1
 rm temp2
 
-done```
+done
+```
 # Conclusion
 In conclusion, I was able to automate the editing of 91 videos out of 125 videos. Since there is no guarantee that this method will definitely work, you need to check every video and manually edit the videos that did not come out as expected. Ffmpeg uses sum of squared differences to detect scene changes and this does not work with cross dissolves and fades. There are other methods which work well in these cases and is not added to ffmpeg. Hopefully I can contribute to ffmpeg by adding such method one day. 
 Ending notes:

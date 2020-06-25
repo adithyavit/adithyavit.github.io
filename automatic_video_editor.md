@@ -20,8 +20,8 @@ The initial version of the script I wrote using ffmpeg took over 15 minutes for 
 ## Step 3: Now we will remove the frames till the timestamp that we extracted above and add the montage video to it.[1]
 1.	We can remove the first few frames in two ways input seeking and output seeking.
 2.	To use input seeking we place the -ss parameter before -i parameter in our script and incase of output seeking we use -ss parameter after the – parameter
-``` Input seeking: ffmpeg -ss 00:23:00 -i Mononoke.Hime.mkv -frames:v 1 out1.jpg```
-```Output seeking: ffmpeg -i Mononoke.Hime.mkv -ss 00:23:00 -frames:v 1 out2.jpg```
+``` Input seeking: ffmpeg -ss 00:23:00 -i Mononoke.Hime.mkv -frames:v 1 out1.jpg
+Output seeking: ffmpeg -i Mononoke.Hime.mkv -ss 00:23:00 -frames:v 1 out2.jpg```
 3.	 The input seeking method works faster by using key frames whereas the output seeking method decodes and discards each frame till reaches the specified time stamp. Previously input seek was not accurate, but since it is accurate now, we use input seeking method.
 4.	We don’t follow this step 3 directly, but we use it in combination with the steps below.
 ## Step 4:  Then we concatenate the montage video that we have already cut using a single line ffmpeg command.[2]
@@ -29,15 +29,15 @@ The initial version of the script I wrote using ffmpeg took over 15 minutes for 
 2.	The concat demuxer and concat protocol methods work when all the files to be concatenated are of same format. The demuxer works at stream level whereas the protocol works on file level.
 3.	The montage video we use here is in the same format as the other videos. Even if it is not in the same format, we can convert it to the same format using ffmpeg.
 4.	In our first attempt, we use the concat protocol and create intermediate files to cut and concatenate the videos.
-a.	ffmpeg -i montage.mp4 -qscale:v 1 intermediate1.mpg
-b.	ffmpeg -i "$NAME" -qscale:v 1 intermediate2.mpg
-c.	ffmpeg -i concat:"intermediate1.mpg|intermediate2.mpg" -c copy intermediate_all.mpg
-d.	ffmpeg -i intermediate_all.mpg -qscale:v 2 output.mp4
+```	ffmpeg -i montage.mp4 -qscale:v 1 intermediate1.mpg 
+	ffmpeg -i "$NAME" -qscale:v 1 intermediate2.mpg 
+	ffmpeg -i concat:"intermediate1.mpg|intermediate2.mpg" -c copy intermediate_all.mpg 
+	ffmpeg -i intermediate_all.mpg -qscale:v 2 output.mp4 ```
 5.	Creating intermediate files is slow and unnecessary, so we now use pipes to avoid intermediate files.
-a.	mkfifo temp1 temp2
-b.	ffmpeg -y -i Montage3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts temp1 2> /dev/null & \
-c.	ffmpeg -y -ss "$ts" -i "$NAME" -c copy -bsf:v h264_mp4toannexb -f mpegts temp2 2> /dev/null & \
-d.	ffmpeg -f mpegts -i "concat:temp1|temp2" -c copy -bsf:a aac_adtstoasc outputs/"$NAME2"
+```	mkfifo temp1 temp2
+	ffmpeg -y -i Montage3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts temp1 2> /dev/null & \
+	ffmpeg -y -ss "$ts" -i "$NAME" -c copy -bsf:v h264_mp4toannexb -f mpegts temp2 2> /dev/null & \
+	ffmpeg -f mpegts -i "concat:temp1|temp2" -c copy -bsf:a aac_adtstoasc outputs/"$NAME2" ```
 6.	In this method, we use mpegts container format for our intermediate temp files and then finally concatenate the output file back to mp4 container format.
 7.	  While concatenating, instead of concatenating the entire file, we seek to the relevant timestamp and then concatenate, this allows us to avoid an another file for removing the initial frames with text.
 8.	In the above script temp1 2> /dev/null &, we are redirecting the output to null so that we do not clutter/hang the terminal.

@@ -5,7 +5,7 @@ categories: jekyll update
 date: 2020-25-06 19:46:00
 ---
 
-# How I automated my part time job after getting bored of it test
+# How I automated my part time job after getting bored of it
 I am working part time as a video editor for a department at my college (ASU). The journey with the team has been exciting and pushed me to learn things that I do not know. I have learnt to use Davinci resolve, illustrator, after effects and many more things. 
 
 But, when the first project was done, there was a small gap where I was assigned a project with repetitive tasks. Here I was supposed to remove titles and add a new montage over and over for 120+ videos.
@@ -36,7 +36,8 @@ Some videos had both montage and title. Here I took the second time from the sce
 We can remove the first few frames in two ways input seeking and output seeking.
 To use input seeking we place the -ss parameter before -i parameter in our script and incase of output seeking we use -ss parameter after the – parameter
 
-``` Input seeking: ffmpeg -ss 00:23:00 -i Mononoke.Hime.mkv -frames:v 1 out1.jpg
+``` 
+Input seeking: ffmpeg -ss 00:23:00 -i Mononoke.Hime.mkv -frames:v 1 out1.jpg
 Output seeking: ffmpeg -i Mononoke.Hime.mkv -ss 00:23:00 -frames:v 1 out2.jpg 
 ```
 

@@ -138,7 +138,7 @@ done
 # Conclusion
 In conclusion, I was able to automate the editing of 91 videos out of 125 videos. Since there is no guarantee that this method will definitely work, you need to check every video and manually edit the videos that did not come out as expected. Ffmpeg uses sum of squared differences to detect scene changes and this does not work with cross dissolves and fades. There are other methods which work well in these cases and is not added to ffmpeg. Hopefully I can contribute to ffmpeg by adding such method one day. 
 
-Ending notes:
+`Ending notes:`
 I learnt a lot about writing shell scripts, pipes and about ffmpeg while I took up this side project. Did you ever try to automate your job or a part of it. Would love to hear more such stories. Let me know your thoughts below. Thanks for reading the entire post.
 # References:
 1.	https://trac.ffmpeg.org/wiki/Seeking

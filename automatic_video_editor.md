@@ -20,13 +20,13 @@ But, when the first project was done, there was a small gap where I was assigned
 ## Step 1: use scene detect to find the timestamp of the video where the titles ended.
 a.Initially I did the scene change detection for the entire video, this was clearly a waste of time. So I could only apply the detection for first 15 seconds of the video before which both montage and title would end.
 
-```
-video_information=$(ffmpeg -i "$NAME" -filter_complex "select='gt(scene,0.3)',metadata=print:file=-"  -vsync vfr slidesnap%03d.png 2>&1 2>/dev/null)
-```
+
+`video_information=$(ffmpeg -i "$NAME" -filter_complex "select='gt(scene,0.3)',metadata=print:file=-"  -vsync vfr slidesnap%03d.png 2>&1 2>/dev/null)`
+
 b.Start seek parameter was passed before the filter so that we could save some time
-```
-video_information=$(ffmpeg -i "$NAME" -ss 0 -t 15 -filter_complex "select='gt(scene,0.3)',metadata=print:file=-"  -vsync vfr slidesnap%03d.png 2>&1 2>/dev/null)
-```
+
+`video_information=$(ffmpeg -i "$NAME" -ss 0 -t 15 -filter_complex "select='gt(scene,0.3)',metadata=print:file=-"  -vsync vfr slidesnap%03d.png 2>&1 2>/dev/null)`
+
 c.The output from above ffmpeg code is stored into video_information variable which will be useful to cut the video. 
 
 ## Step 2: Use the scene change text file and parse the timestamp.
@@ -71,14 +71,14 @@ In the above script temp1 2> /dev/null &, we are redirecting the output to null 
 ![](automatic_video_editor/images/scene_detect.png)
 
 ### To save list of video names as text file, we use the following command.
-```
-dir /b /a-d > filename.txt
-```
+
+`dir /b /a-d > filename.txt`
+
 I use this command to get all the file names and import it to excel, this was it will be easier for me to check how many videos have been cut correctly and how many of them have been done wrong.
 To count the no of cell having the word “pass”, I use the following excel formula:
-```
-=COUNTIF([status],"fail")
-```
+
+`=COUNTIF([status],"fail")`
+
 Where status is the column I am applying the string count program on.
 ## How many videos did our script work correctly on?
 On 91 videos of the 125-total video, the program worked correctly. For the remaining 34 videos, I still had to edit the videos manually.
@@ -93,9 +93,9 @@ When concatenating video using the concat protocol of ffmpeg, it is required tha
 
 ## Permissions
 To run our script, we give executable permission to the file using the following command
-```
-chmod +x filename
-``` 
+
+`chmod +x filename`
+
 ## Remove intermediate files
 In the above process, ffmpeg also outputs the snapshot of the frame where the scene is cut automatically. When we run the script for 125 videos, the folder gets cluttered with snapshots of these frames. So I add rm slidesnap* to remove the file as soon as it is added to the folder. Similarly, I also remove the temp1 and temp 2 using rm temp1, rm temp2 to the script.
 ## Complete script

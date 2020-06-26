@@ -61,7 +61,9 @@ In the above script temp1 2> /dev/null &, we are redirecting the output to null 
 ## How scene detect works?[3]
   Ffmpeg uses the Sum of absolute differences method to compare consecutive frames. As we compare only frames till 15 seconds, the amount of time to find the first cut is also reduced. 
   
-<img src="automatic_video_editor/images/scene_detect.png" width=500>
+<!--- <img src="automatic_video_editor/images/scene_detect.png" width=500> --->
+
+![](automatic_video_editor/images/scene_detect.png)
 
 ### To save list of video names as text file, we use the following command.
 ```

@@ -48,13 +48,15 @@ There are three methods to concatenate videos. The first two methods work when t
 The concat demuxer and concat protocol methods work when all the files to be concatenated are of same format. The demuxer works at stream level whereas the protocol works on file level.
 The montage video we use here is in the same format as the other videos. Even if it is not in the same format, we can convert it to the same format using ffmpeg.
 In our first attempt, we use the concat protocol and create intermediate files to cut and concatenate the videos.
-```	ffmpeg -i montage.mp4 -qscale:v 1 intermediate1.mpg 
+```	
+ffmpeg -i montage.mp4 -qscale:v 1 intermediate1.mpg 
 	ffmpeg -i "$NAME" -qscale:v 1 intermediate2.mpg 
 	ffmpeg -i concat:"intermediate1.mpg|intermediate2.mpg" -c copy intermediate_all.mpg 
 	ffmpeg -i intermediate_all.mpg -qscale:v 2 output.mp4 	
 ```
 Creating intermediate files is slow and unnecessary, so we now use pipes to avoid intermediate files.
-```	mkfifo temp1 temp2
+```	
+mkfifo temp1 temp2
 	ffmpeg -y -i Montage3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts temp1 2> /dev/null & \
 	ffmpeg -y -ss "$ts" -i "$NAME" -c copy -bsf:v h264_mp4toannexb -f mpegts temp2 2> /dev/null & \
 	ffmpeg -f mpegts -i "concat:temp1|temp2" -c copy -bsf:a aac_adtstoasc outputs/"$NAME2" 
@@ -135,8 +137,9 @@ done
 ```
 # Conclusion
 In conclusion, I was able to automate the editing of 91 videos out of 125 videos. Since there is no guarantee that this method will definitely work, you need to check every video and manually edit the videos that did not come out as expected. Ffmpeg uses sum of squared differences to detect scene changes and this does not work with cross dissolves and fades. There are other methods which work well in these cases and is not added to ffmpeg. Hopefully I can contribute to ffmpeg by adding such method one day. 
+
 Ending notes:
-I learnt a lot about writing shell scripts, pipes and about ffmpeg while I took up this challenge. I challenge the readers to try to automate parts of their job and share their experiences along the way. Would love to hear more such stories. Let me know your thoughts below. 
+I learnt a lot about writing shell scripts, pipes and about ffmpeg while I took up this side project. Did you ever try to automate your job or a part of it. Would love to hear more such stories. Let me know your thoughts below. Thanks for reading the entire post.
 # References:
 1.	https://trac.ffmpeg.org/wiki/Seeking
 2.	https://trac.ffmpeg.org/wiki/Concatenate

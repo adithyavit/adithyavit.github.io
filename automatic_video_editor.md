@@ -4,7 +4,7 @@ I am working part time as a video editor for a department at my college (ASU). T
 
 But, when the first project was done, there was a small gap where I was assigned a project with repetitive tasks. Here I was supposed to remove titles and add a new montage over and over for 120+ files.
 
-![](images/time_taken.png)
+![](automatic_video_editor/images/time_taken.png)
 
 # How I automated the process?
 ## Step 1: use scene detect to find the timestamp of the video where the titles ended.

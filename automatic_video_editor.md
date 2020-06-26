@@ -1,4 +1,8 @@
-
+---
+layout: page
+title:  "Automating my part time video editor work"
+categories: jekyll update
+---
 # How I automated my part time job after getting bored of it
 I am working part time as a video editor for a department at my college (ASU). The journey with the team has been exciting and pushed me to learn things that I do not know. I have learnt to use Davinci resolve, illustrator, after effects and many more things. 
 

@@ -2,6 +2,7 @@
 layout: page
 title:  "Automating my part time video editor work"
 categories: jekyll update
+date: 2020-25-06 19:46:00
 ---
 
 # How I automated my part time job after getting bored of it

@@ -34,9 +34,11 @@ Some videos had both montage and title. Here I took the second time from the sce
 ## Step 3: Now we will remove the frames till the timestamp that we extracted above and add the montage video to it.[1]
 We can remove the first few frames in two ways input seeking and output seeking.
 To use input seeking we place the -ss parameter before -i parameter in our script and incase of output seeking we use -ss parameter after the – parameter
+
 ``` Input seeking: ffmpeg -ss 00:23:00 -i Mononoke.Hime.mkv -frames:v 1 out1.jpg
 Output seeking: ffmpeg -i Mononoke.Hime.mkv -ss 00:23:00 -frames:v 1 out2.jpg 
 ```
+
 The input seeking method works faster by using key frames whereas the output seeking method decodes and discards each frame till reaches the specified time stamp. Previously input seek was not accurate, but since it is accurate now, we use input seeking method.
 We don’t follow this step 3 directly, but we use it in combination with the steps below.
 ## Step 4:  Then we concatenate the montage video that we have already cut using a single line ffmpeg command.[2]

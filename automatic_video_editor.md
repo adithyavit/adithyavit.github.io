@@ -64,8 +64,11 @@ To count the no of cell having the word “pass”, I use the following excel fo
 Where status is the column I am applying the string count program on.
 ## How many videos did our script work correctly on?
 On 91 videos of the 125-total video, the program worked correctly. For the remaining 34 videos, I still had to edit the videos manually.
+
+![](automatic_video_editor/images/no_of_videos.png)
+
 ## Why some of the videos weren’t cut properly?
-The videos for which the script did not work properly have crossdissolves or fades between title and the person entrance. This causes the sse method of the ffmpeg to not work as expected.
+> The videos for which the script did not work properly have crossdissolves or fades between title and the person entrance. This causes the sse method of the ffmpeg to not work as expected.
 ## Permissions
 To run our script, we give executable permission to the file using the following command
 ```

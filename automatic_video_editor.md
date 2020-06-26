@@ -5,7 +5,7 @@ categories: jekyll update
 date: 2020-25-06 19:46:00
 ---
 
-# How I automated my part time job after getting bored of it
+# How I automated my part time job after getting bored of it test
 I am working part time as a video editor for a department at my college (ASU). The journey with the team has been exciting and pushed me to learn things that I do not know. I have learnt to use Davinci resolve, illustrator, after effects and many more things. 
 
 But, when the first project was done, there was a small gap where I was assigned a project with repetitive tasks. Here I was supposed to remove titles and add a new montage over and over for 120+ videos.

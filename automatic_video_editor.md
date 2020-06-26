@@ -1,8 +1,8 @@
 
 # Reason behind my project
-I was select as a video editor for a department at my college Arizona state university. The journey with the team has been exciting and pushed me to learn things that I do not know. I have learnt using Davinci resolve, removed shine on foreheads due to extra lighting, created vector drawings using illustrator and animations using after effects. 
+I am working part time as a video editor for a department at my college (ASU). The journey with the team has been exciting and pushed me to learn things that I do not know. I have learnt to use Davinci resolve, illustrator, after effects and many more things. 
 
-But, when the first project was done, there was a small gap where I was assigned a filler project. Here I was supposed to do some boring stuff over and over for 120+ files where I need to remove titles and add a new montage for every video.
+But, when the first project was done, there was a small gap where I was assigned a project with repetitive tasks. Here I was supposed to remove titles and add a new montage over and over for 120+ files.
 
 ![](images/time_taken.png)
 

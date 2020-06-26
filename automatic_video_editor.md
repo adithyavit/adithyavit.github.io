@@ -1,12 +1,12 @@
 
-# Reason behind my project
+# How I automated my part time job after getting bored of it
 I am working part time as a video editor for a department at my college (ASU). The journey with the team has been exciting and pushed me to learn things that I do not know. I have learnt to use Davinci resolve, illustrator, after effects and many more things. 
 
-But, when the first project was done, there was a small gap where I was assigned a project with repetitive tasks. Here I was supposed to remove titles and add a new montage over and over for 120+ files.
+But, when the first project was done, there was a small gap where I was assigned a project with repetitive tasks. Here I was supposed to remove titles and add a new montage over and over for 120+ videos.
 
 ![](automatic_video_editor/images/time_taken.png)
 
-# How I automated the process?
+# How does the method work?
 
 <img src="automatic_video_editor/images/architecture2.png" width=500>
 

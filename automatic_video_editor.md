@@ -53,11 +53,13 @@ In the above script temp1 2> /dev/null &, we are redirecting the output to null 
 ## How scene detect works?[3]
   Ffmpeg uses the Sum of absolute differences method to compare consecutive frames. As we compare only frames till 15 seconds, the amount of time to find the first cut is also reduced. 
 ### To save list of video names as text file, we use the following command.
-```dir /b /a-d > filename.txt
+```
+dir /b /a-d > filename.txt
 ```
 I use this command to get all the file names and import it to excel, this was it will be easier for me to check how many videos have been cut correctly and how many of them have been done wrong.
 To count the no of cell having the word “pass”, I use the following excel formula:
-```=COUNTIF([status],"fail")
+```
+=COUNTIF([status],"fail")
 ```
 Where status is the column I am applying the string count program on.
 ## How many videos did our script work correctly on?
@@ -66,13 +68,15 @@ On 91 videos of the 125-total video, the program worked correctly. For the remai
 The videos for which the script did not work properly have crossdissolves or fades between title and the person entrance. This causes the sse method of the ffmpeg to not work as expected.
 ## Permissions
 To run our script, we give executable permission to the file using the following command
-```chmod +x filename
+```
+chmod +x filename
 ``` 
 ## Remove intermediate files
 In the above process, ffmpeg also outputs the snapshot of the frame where the scene is cut automatically. When we run the script for 125 videos, the folder gets cluttered with snapshots of these frames. So I add rm slidesnap* to remove the file as soon as it is added to the folder. Similarly, I also remove the temp1 and temp 2 using rm temp1, rm temp2 to the script.
 ## Complete script
 
-```FILES=inputs/*
+```
+FILES=inputs/*
 for filename in $FILES 
     do 
         NAME=$(echo "${filename}"); 

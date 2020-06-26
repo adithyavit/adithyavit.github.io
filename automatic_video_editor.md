@@ -8,11 +8,11 @@ But, when the first project was done, there was a small gap where I was assigned
 
 # How I automated the process?
 ## Step 1: use scene detect to find the timestamp of the video where the titles ended.
-### a.	Initially I did the scene change detection for the entire video, this was clearly a waste of time. So I could only apply the detection for first 15 seconds of the video before which both montage and title would end.
+a.Initially I did the scene change detection for the entire video, this was clearly a waste of time. So I could only apply the detection for first 15 seconds of the video before which both montage and title would end.
 ```video_information=$(ffmpeg -i "$NAME" -filter_complex "select='gt(scene,0.3)',metadata=print:file=-"  -vsync vfr slidesnap%03d.png 2>&1 2>/dev/null)```
-### b.	Start seek parameter was passed before the filter so that we could save some time
+b.Start seek parameter was passed before the filter so that we could save some time
 ```video_information=$(ffmpeg -i "$NAME" -ss 0 -t 15 -filter_complex "select='gt(scene,0.3)',metadata=print:file=-"  -vsync vfr slidesnap%03d.png 2>&1 2>/dev/null)```
-### c.	The output from above ffmpeg code is stored into video_information variable which will be useful to cut the video. 
+c.The output from above ffmpeg code is stored into video_information variable which will be useful to cut the video. 
 ## Step 2: Use the scene change text file and parse the timestamp.
 Some videos only had title, so I took the first timestamp where the scene change was detected.
 Some videos had both montage and title. Here I took the second time from the scene change list.

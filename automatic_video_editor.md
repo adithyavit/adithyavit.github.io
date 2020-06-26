@@ -7,6 +7,8 @@ But, when the first project was done, there was a small gap where I was assigned
 ![](automatic_video_editor/images/time_taken.png)
 
 # How I automated the process?
+
+<img src="automatic_video_editor/images/architecture2.png" width=500>
 ## Step 1: use scene detect to find the timestamp of the video where the titles ended.
 a.Initially I did the scene change detection for the entire video, this was clearly a waste of time. So I could only apply the detection for first 15 seconds of the video before which both montage and title would end.
 
@@ -52,6 +54,9 @@ In the above script temp1 2> /dev/null &, we are redirecting the output to null 
 
 ## How scene detect works?[3]
   Ffmpeg uses the Sum of absolute differences method to compare consecutive frames. As we compare only frames till 15 seconds, the amount of time to find the first cut is also reduced. 
+  
+<img src="automatic_video_editor/images/scene_detect.png" width=500>
+
 ### To save list of video names as text file, we use the following command.
 ```
 dir /b /a-d > filename.txt
@@ -68,7 +73,11 @@ On 91 videos of the 125-total video, the program worked correctly. For the remai
 ![](automatic_video_editor/images/no_of_videos.png)
 
 ## Why some of the videos weren’t cut properly?
-> The videos for which the script did not work properly have crossdissolves or fades between title and the person entrance. This causes the sse method of the ffmpeg to not work as expected.
+The videos for which the script did not work properly have crossdissolves or fades between title and the person entrance. This causes the sse method of the ffmpeg to not work as expected.
+
+## Issues while concatenating videos
+When concatenating video using the concat protocol of ffmpeg, it is required that the videos belong to same container. When the script was run for first time, the authors voice pitch went up. Given that the container format of both the videos were same, this issue seemed tough to tackle. But when I noticed the bitrate and sample rate of both the files. They were different, after this was fixed using handbrake(UI over ffmpeg) the issue is resolved.
+
 ## Permissions
 To run our script, we give executable permission to the file using the following command
 ```

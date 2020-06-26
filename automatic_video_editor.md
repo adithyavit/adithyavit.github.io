@@ -9,6 +9,7 @@ But, when the first project was done, there was a small gap where I was assigned
 # How I automated the process?
 
 <img src="automatic_video_editor/images/architecture2.png" width=500>
+
 ## Step 1: use scene detect to find the timestamp of the video where the titles ended.
 a.Initially I did the scene change detection for the entire video, this was clearly a waste of time. So I could only apply the detection for first 15 seconds of the video before which both montage and title would end.
 

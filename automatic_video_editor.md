@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title:  "Automating my part time video editor work"
 categories: jekyll update
 date: 2020-25-06 19:46:00

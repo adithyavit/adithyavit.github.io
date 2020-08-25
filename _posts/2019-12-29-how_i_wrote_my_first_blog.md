@@ -3,26 +3,6 @@ layout: post
 title: How I wrote my first blog!
 ---
 
-## This is not my first blog
-To be frank this is not my first blog, when I was young, I tried to write blogs using google blogger, wix, wordpress etc.
-But, I did not continue doing them for long. There were numerous reasons like jumping from one thing to another without sticking to a domain and no viewer ship etc.
-
-## There was no struggle in my previous blogs
-When I used solutions like wix, wordpress or blogger, It was so easy to publish blogs that I took it for granted. I left it easily.
-Think about throwing out a branded shirt vs throwing out a shirt you custom designed.
-
-## I did not share my previous blogs
-Previously when I wrote some blogs, I posted them on my facebook page which had 20 followers, and 18-19 of those people did not care.
-This made it easier to leave what I was writing in between
-
-## My previous blogs were silly
-I wrote about things that were stupid. (a boy on an adventure trip with his dog, love story hens). I fel't that I might make grammatical mistakes (Of course now, I realize that no one cares and it doesn't matter).
-
-## Why it's different this time
-This time I plan to write about data structrues, computer vision, machine learning, data science, web development, andriod development etc.
-Most of my friends on instagram, twitter and linkedin would be intereseted to read atleast one of my blogs, so I would feel atleast a bit comfortable sharing my blogs if not entirely.
-I care less about my mistakes being public and recieve any criticism positively.  
-
 ## Tools I used
 I used jekyll and github to write and publish this blog.
 

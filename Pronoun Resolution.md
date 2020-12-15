@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "fake currency detection"
+title:  "Pronoun resolution"
 categories: jekyll update
 ---
 

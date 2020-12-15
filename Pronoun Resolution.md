@@ -1,3 +1,9 @@
+---
+layout: page
+title:  "fake currency detection"
+categories: jekyll update
+---
+
 # Pronoun Resolution
 
 ## Abstract

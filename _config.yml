@@ -8,7 +8,9 @@ title:               Adithya
 tagline:             'Data Science and ML Projects'
 description:         '<a href= target="_blank">Adithya</a> Master`s in computer science with Big Data Specialization at Arizona State University. Actively looking for full time opportunities'
 url:                 ''
-baseurl:             ''
+# baseurl:             'http://localhost:4000/'
+# baseurl:             'adithyavit.github.io/'
+
 paginate:            5
 paginate_path: "page:num"
 gems: [jekyll-paginate]

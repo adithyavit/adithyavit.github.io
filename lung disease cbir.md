@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "lung disease cbir!"
+title:  "Tuberculosis Image retrieval"
 categories: jekyll update
 ---
 This is a read me file for the project named “comparison of lle and pca on local features for lung disease image retrieval”

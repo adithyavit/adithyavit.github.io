@@ -74,11 +74,6 @@ hand -->
 - Built a garbage collection robot using robot car chassis, motors, camera and ultra sonic sensor.
 - Trained a garbage detection model using Keras and wrote RaspberryPi scripts to handle all the robot components and deployed the deep learning model on it.
 
-### <span> Big Data - Geo Spatial Data Hotspot Analysis </span>
-
-- Analyzed NYC Taxi data by implementing range and distance queries in order to identify statistically significant spatial hot spots areas using Apache spark.
-- Reduced CPU and memory utilization by up to 50% by distributing the load across Hadoop cluster on AWS.
-
 ### <span> Machine Learning - Gesture recognition using personalized page rank  </span>
 
 - Generated files to store gesture data at different levels of abstraction using statistical features and dimensionality reduction with help of pandas, sklearn, scipy and custom functions.
@@ -103,9 +98,8 @@ hand -->
 
 ### <a href="/automatic_video_editor/"> <span> FFMPEG - Automated video title replacement </span> </a>
 
-- Implemented different noise detection and reduction techniques based on multiple peer reviewed publications to find out the best performing method. 
-- Calculated different quality estimation metrics to find the technique producing image with least noise. 
-- Improved the speed of computation using parallel processing with OpenMp. 
+- Automated parts of video editing pipeline using FFMPEG at global launch to save many hours in production time.
+- Produced result 100x faster when compared to traditional methods.
 
 
 ### <a href="/weather_prediction/"> <span> Machine Learning/ Visualization - Delhi weather dataset </span> </a>
@@ -129,7 +123,7 @@ hand -->
 - Implemented low level code for Map insert, Batch insert for Bigtable and improved its efficiency using btrees.
 - Implemented indexing, querying, row sort and row join operations on Bigtable database.
 
-### <span> Geo Spatial Data Hotspot Analysis </span>
+### <a href="/geospatial_hotspot_analysis/"><span> Geo Spatial Data Hotspot Analysis </span></a>
 
 - Analyzed NYC Taxi data by implementing range and distance queries in order to identify statistically significant spatial hot spots areas using Apache spark.
 - Reduced CPU and memory utilization by up to 50% by distributing the load  across Hadoop cluster on AWS.

@@ -16,8 +16,7 @@ line. It is intended to be used for contact details -->
 
 <!-- The paragraph after the h1 and ul and before the first h2 is optional. It
 is intended to be used for a short summary. -->
-I am a Student from Arizona State University with a Master's in computer science (Big Data specialization). I am good at Web Devlopment, Data Science and Android
-
+I am a Student from Arizona State University with a Master's in computer science (Big Data specialization).
 
 ## Education
 
@@ -25,17 +24,9 @@ I am a Student from Arizona State University with a Master's in computer science
 
   - GPA 3.51
 
-### <span> VIT University (Chennai Campus) </span> <span>2015 -- 2019 </span>
+### <span> Vellore Institute of Technology </span> <span>2015 -- 2019 </span>
 
   - GPA 8.34
-
-## Skills
-
-- Programming languages: Java, Python, Ruby, JavaScript, SQL
-- Libraries: OpenCv, Scikit-Image, Scikit-learn, Keras, Pandas, Numpy, Mongoose
-- Frameworks: Ruby on Rails, React, Express, Django
-- Databases: MySQL, PostgreSQL
-- Tools: Git, unix terminal
 
 ## Experience
 
@@ -132,3 +123,11 @@ hand -->
 
 - Extracted different types of features from the given time-series readings and selected relevant features using forward, backward selection.  
 - Predicted the meal/ no-meal from the time-series data with an mean accuracy of 70%  
+
+## Skills
+
+- Programming languages: Java, Python, Ruby, JavaScript, SQL
+- Libraries: OpenCv, Scikit-Image, Scikit-learn, Keras, Pandas, Numpy, Mongoose
+- Frameworks: Ruby on Rails, React, Express, Django
+- Databases: MySQL, PostgreSQL
+- Tools: Git, unix terminal

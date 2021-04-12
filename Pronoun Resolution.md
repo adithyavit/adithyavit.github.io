@@ -150,7 +150,7 @@ We also remove un-necessary symbols and only
 retain alpha numeric characters along with “.” and
 “.” symbols.
 
-![pronoun resolution flow](pronoun_resolution_flow.jpg)
+![pronoun resolution flow](pronoun_resolution_flow.png)
 
 Then we convert the model into an xml format
 where the root is at the top of the hierarchy. There

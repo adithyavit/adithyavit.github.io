@@ -44,12 +44,13 @@ hand -->
 - Followed the material design principles for design and connected to the company internal API for data.
 
 ## Projects
-### <span>Scalable image classifier – Aws, Python</span>
+
+### <a href=""><span>Scalable image classifier – Aws, Python</span></a>
 
 - Deployed a deep learning classifier and front‐end app on AWS using flask to classify the input image.
 - Scaled the app by implementing custom autoscaling application using SQS, S3, EC2 in AWS.
 
-### <span>Video resume creator – FFmpeg, GCP</span>
+### <a href=""><span>Video resume creator – FFmpeg, GCP</span></a>
 
 - Developed a program that parses relevant data from resume and creates a video using ffmpeg and flask.
 - Deployed it on GCP using google app engine, cloud store, pub/sub and cloud run.

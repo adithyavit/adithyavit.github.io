@@ -8,6 +8,6 @@ categories: jekyll update
 Scalable image classifier – Aws, Python
 
 ## Architecture:
-![](images/aws_poster.jpg)
+![](images/aws_poster.jpg) 
 
 

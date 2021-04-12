@@ -22,7 +22,7 @@ I am a Student from Arizona State University with a Master's in computer science
 
 ### <span> Arizona State University </span> <span>2019 -- 2021 </span>
 
-  - GPA 3.51
+  - GPA 3.56
 
 ### <span> Vellore Institute of Technology </span> <span>2015 -- 2019 </span>
 
@@ -44,6 +44,17 @@ hand -->
 - Followed the material design principles for design and connected to the company internal API for data.
 
 ## Projects
+### <a href="/scalable image classifier/"><span>Scalable image classifier – Aws, Python</span></a>
+
+- Deployed a deep learning classifier and front‐end app on AWS using flask to classify the input image.
+- Scaled the app by implementing custom autoscaling application using SQS, S3, EC2 in AWS.
+
+### <a href="/video resume creator/"><span>Video resume creator – FFmpeg, GCP</span></a>
+
+- Developed a program that parses relevant data from resume and creates a video using ffmpeg and flask.
+- Deployed it on GCP using google app engine, cloud store, pub/sub and cloud run.
+
+
 ### <a href="/scratch-ml/"><span> Machine Learning - Naive Bayes and KNN algorithms from scratch </span></a>
 
 - Implemented different versions of k-means algorithm and Naive Bayes algorithm and compared accuracy.

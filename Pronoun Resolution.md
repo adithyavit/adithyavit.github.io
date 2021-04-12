@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "Pronoun resolution"
+title:  "pronoun resolution"
 categories: jekyll update
 ---
 

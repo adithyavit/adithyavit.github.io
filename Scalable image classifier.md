@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "Scalable image classifier"
+title:  "scalable image classifier"
 categories: jekyll update
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "Video resume creator"
+title:  "video resume creator"
 categories: jekyll update
 ---
 

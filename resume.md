@@ -10,7 +10,6 @@ categories: jekyll update
 <!-- The unordered list immediately after the h1 will be formatted on a single
 line. It is intended to be used for contact details -->
 - <schinth3@asu.edu>
-- (480) 765 1635
 - [linkedin.com/in/adithya-reddy-ch/](http://linkedin.com/in/adithya-reddy-ch/)
 - Tempe, Az
 
